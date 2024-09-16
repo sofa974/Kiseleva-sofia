@@ -1,0 +1,41 @@
+.fio {
+    font-size: 24px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 24px;
+}
+
+.image {
+    width: 75%;
+    height: 75%;
+}
+
+.main {
+    text-align: center;
+}
+
+.animation {
+    width: 50%;
+    height: 50%;
+    animation: move-box 2s infinite; 
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+@keyframes move-box {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    25% {
+        transform: scale(1.25); 
+    }
+    50% {
+        transform: scale(1); 
+    }
+    75% {
+        transform: scale(0.75); 
+    }
+}

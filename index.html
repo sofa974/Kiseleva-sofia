@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключение стилей-->
+</head>
+<body>
+    <div class="main">
+        <div class="block">
+            <div class="text">
+                Меня зовут Киселева Софья Александровна.<br>
+                Умею выполнять несколько задач одновременно , налаживать коммуникацию с людьми, а так же выполнять монотонную работу . Увлекаюсь волейболом , так же много времени уделяю на саморазвитию.
+                С детства любила рисовать .<br>
+                Принцу нужен лис!
+            </div>
+        </div>
+        <br>
+    <img id="firstImage" src="img/LIS1.png" class="lis" alt="" left="20px" width="20%" height="20%">
+    <div class="media">
+                <img id="firstImage2" src="img/princ1.png" alt="" class="image">
+                <img id="secondImage" src="img/princ2.png" alt="" class="image" style="display:none;">
+    </div>
+    
+    <img id="secondImage" src="image2.jpg" alt="Image 2" style="display:none;">
+
+    <script>
+        const firstImage = document.getElementById('firstImage');
+        const firstImage2 = document.getElementById('firstImage2');
+        const secondImage = document.getElementById('secondImage');
+
+        firstImage.addEventListener('click', function() {
+            firstImage.style.display = 'none';  // Скрываем первую картинку
+            firstImage2.style.display = 'none'; 
+            secondImage.style.display = 'block';  // Показываем вторую картинку
+        });
+
+        //Анимация фона
+        const images = [
+            'url("img/fon1.jpg")',
+            'url("img/fon2.jpg")',
+            'url("img/fon3.jpg")'
+        ]; // Массив картинок (укажите свои изображения)
+        let index = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = images[index]; // Меняем фоновое изображение
+            index = (index + 1) % images.length; // Увеличиваем индекс, сбрасываем до 0, если достигли конца массива
+        }
+
+        setInterval(changeBackground, 2000); // Меняем изображение каждые 2 секунды
+    </script>
+
+</body>
+</html>
